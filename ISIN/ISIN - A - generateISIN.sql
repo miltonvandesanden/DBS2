@@ -23,10 +23,8 @@ AS
   group10 VARCHAR2(4);
 BEGIN
   --BEGIN ISIN--
-  ISIN := universityCode || countryCode || studentNumber;
-  
   --BEGIN CHECKSUM--
-  checksum := ISIN;
+  checksum := universityCode || countryCode || studentNumber;
   
   -- 2, Zet elke letter om naar een getal, waarbij('A' = 16, 'B' = 17,...)
   FOR i IN 0..LENGTH(checksum)
