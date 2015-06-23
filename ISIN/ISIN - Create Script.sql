@@ -1,12 +1,9 @@
 -- Drop alle tables, functies en procedures weer
 DROP TABLE DBS2_University;
 DROP TABLE DBS2_Country;
-DROP FUNCTION DBS2_generateISIN;
-DROP FUNCTION DBS2_checkForCorrectness;
-DROP PROCEDURE DBS2_ASSERT_EQUALS;
 
 -- Zet de server output aan
-set serveroutput on
+set serveroutput on;
 
 -- Maak de landen tabel
 CREATE TABLE DBS2_Country
@@ -25,7 +22,7 @@ CREATE TABLE DBS2_University
   Name VARCHAR2(100) NOT NULL,
   SNL NUMBER NOT NULL,
   
-  FOREIGN KEY (CountryID) REFERENCES Country(ID)
+  FOREIGN KEY (CountryID) REFERENCES DBS2_Country(ID)
 );
 
 -- Voeg wat landen toe
